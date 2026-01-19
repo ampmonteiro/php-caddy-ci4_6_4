@@ -1,0 +1,15 @@
+{
+    auto_https off
+    # auto_https disable_redirects   # keep certs, stop HTTP→HTTPS redirects
+    # auto_https disable_certs       # stop cert automation, keep redirects
+}
+
+:80 {
+
+    root * /var/www/html/public
+
+    php_fastcgi php:9000
+
+    file_server
+
+}

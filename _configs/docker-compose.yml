@@ -1,0 +1,24 @@
+# docker-compose.yml
+name: php-caddy-2026
+services:
+  caddy:
+    image: caddy:2.10.2
+    ports:
+      - "8026:80" # localhost:2026
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ../play/:/var/www/html/
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile.php
+    volumes:
+      - ../play/:/var/www/html/
+
+
+volumes:
+  caddy_data:
+  caddy_config:
