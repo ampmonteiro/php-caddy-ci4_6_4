@@ -8,9 +8,6 @@ class AccordionCell extends Cell
 {
     public $id;
     public $items = [];
-
-    public function __invoke(): string
-    {
-        return view('cells/accordion');
-    }
+    // Force CI to use app/Views/cells/accordion.php
+    protected string $view =  APPPATH . 'Views/cells/accordion.php';
 }
