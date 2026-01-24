@@ -23,6 +23,12 @@ class Pages extends BaseController
             [static::class, 'about'],
             ['as' => 'page_about']
         );
+
+        $routes->get(
+            '/card',
+            [static::class, 'card'],
+            ['as' => 'page_card']
+        );
     }
 
 
@@ -44,5 +50,10 @@ class Pages extends BaseController
         return view(
             'pages/about',
         );
+    }
+
+    public function card(): string
+    {
+        return view('pages/card');
     }
 }

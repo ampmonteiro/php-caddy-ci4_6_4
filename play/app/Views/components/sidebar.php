@@ -15,12 +15,17 @@
             </li>
 
             <li class="nav-item">
-                <a href="<?= route_to('page_about') ?>"
-                    class="<?= uri_string() === 'about' ? 'active' : '' ?> nav-link ">
+                <a
+                    href="<?= route_to('page_card') ?>"
+                    class="<?= uri_string() === 'card' ? 'active' : '' ?> 
+                    nav-link">
+
                     <i class="me-3 fs-5"></i>
-                    <span class="sidebar-text">About</span>
+                    <span class="sidebar-text">
+                        Card Dynamic Cell
                 </a>
             </li>
+
 
             <li class="nav-item">
                 <a
@@ -28,11 +33,21 @@
                     class="<?= uri_string() === 'say' ? 'active' : '' ?> 
                     nav-link">
 
-                    <i class="bi bi-people-fill me-3 fs-5"></i>
+                    <i class="me-3 fs-5"></i>
                     <span class="sidebar-text">Invokable | json
                     </span>
                 </a>
             </li>
+
+
+            <li class="nav-item">
+                <a href="<?= route_to('page_about') ?>"
+                    class="<?= uri_string() === 'about' ? 'active' : '' ?> nav-link ">
+                    <i class="me-3 fs-5"></i>
+                    <span class="sidebar-text">About</span>
+                </a>
+            </li>
+
 
             <li class="nav-item">
                 <a
@@ -46,11 +61,5 @@
 
         </ul>
 
-        <div class="mt-auto p-3 border-top border-secondary">
-            <a class="nav-link" href="#">
-                <i class="bi bi-gear me-3 fs-5"></i>
-                <span class="sidebar-text">Settings</span>
-            </a>
-        </div>
     </div>
 </div>
