@@ -30,11 +30,30 @@ in _config exists:
 - defined some cli command in `composer.json` to generate ci `controllers`, `models` and `filters`
 
 
+## New 24/01/2026
+
+-  change Routes > `index` >> Routes > `web`
+
+- Change Config > routes, removed default namespace and class
+
+- Change Config > routes, change default method to `__invoke`
+
+- previous two change:
+
+    - allow call controller as single action
+    - prevent use only simple string to define controll + method
+    - similar to laravel, only as to indicate the controller:
+
+         ```[MyClass:class, 'method']```
+         
+         `MyClass::class` (single action)
+
+- Shows beter ways to use Cell views with `dynamic` body
+
 ## image
 
 pages
 ![simple layout](image.png)
-
 
 custom scripts in `composer.json`:
 
