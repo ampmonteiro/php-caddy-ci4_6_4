@@ -5,7 +5,7 @@
                 <i class="bi bi-list fs-4"></i>
             </button>
 
-            <a class="navbar-brand" href="#">MyApp</a>
+            <a class="navbar-brand" href="/">MyApp</a>
 
             <div class="navbar-nav ms-auto">
                 <div class="nav-item dropdown">

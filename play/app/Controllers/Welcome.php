@@ -6,6 +6,6 @@ class Welcome extends BaseController
 {
     public function index(): string
     {
-        return view('welcome/index');
+        return view('pages/welcome');
     }
 }
