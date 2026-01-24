@@ -1,4 +1,4 @@
-FROM php:8.5.1-fpm
+FROM php:8.5.2-fpm
 
 COPY --from=ghcr.io/mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
