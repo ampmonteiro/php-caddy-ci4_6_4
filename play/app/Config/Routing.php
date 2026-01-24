@@ -30,7 +30,7 @@ class Routing extends BaseRouting
      */
     public array $routeFiles = [
         // APPPATH . 'Config/Routes.php',
-        APPPATH . 'Routes/index.php'
+        APPPATH . 'Routes/web.php'
     ];
 
     /**
@@ -39,8 +39,9 @@ class Routing extends BaseRouting
      * namespace has been specified.
      *
      * Default: 'App\Controllers'
+     * Note: for classes with only  __invoke and passing only NomeClass::class, do not add namespace default
      */
-    public string $defaultNamespace = 'App\Controllers';
+    public string $defaultNamespace = '';
 
     /**
      * For Auto Routing.
@@ -49,7 +50,7 @@ class Routing extends BaseRouting
      *
      * Default: 'Home'
      */
-    public string $defaultController = 'Home';
+    public string $defaultController = '';
 
     /**
      * For Defined Routes and Auto Routing.
@@ -57,8 +58,10 @@ class Routing extends BaseRouting
      * method has been set in the route.
      *
      * Default: 'index'
+     * allowed: '__invoke', etc
+     * not allowed: '_'
      */
-    public string $defaultMethod = 'index';
+    public string $defaultMethod = '__invoke';
 
     /**
      * For Auto Routing.
