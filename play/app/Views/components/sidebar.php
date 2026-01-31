@@ -26,6 +26,18 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a
+                    href="<?= route_to('page_dynamic_view') ?>"
+                    class="<?= uri_string() === 'dynamic-view' ? 'active' : '' ?> 
+                    nav-link">
+
+                    <i class="me-3 fs-5"></i>
+                    <span class="sidebar-text">
+                        Card Dynamic Smart View
+                    </span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a

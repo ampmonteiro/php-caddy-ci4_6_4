@@ -29,6 +29,12 @@ class Pages extends BaseController
             [static::class, 'card'],
             ['as' => 'page_card']
         );
+
+        $routes->get(
+            'dynamic-view',
+            [static::class, 'dynamicView'],
+            ['as' => 'page_dynamic_view']
+        );
     }
 
 
@@ -55,5 +61,12 @@ class Pages extends BaseController
     public function card(): string
     {
         return view('pages/card');
+    }
+
+    public function dynamicView(): string
+    {
+        $title = 'Dynamic Smart View Card Title';
+
+        return view('pages/dynamic-view', compact('title'));
     }
 }
