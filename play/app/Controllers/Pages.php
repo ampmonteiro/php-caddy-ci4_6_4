@@ -65,8 +65,8 @@ class Pages extends BaseController
 
     public function dynamicView(): string
     {
-        $title = 'Dynamic Smart View Card Title';
+        $base_title = 'Dynamic Smart View Card Title';
 
-        return view('pages/dynamic-view', compact('title'));
+        return view('pages/dynamic-view', compact('base_title'));
     }
 }

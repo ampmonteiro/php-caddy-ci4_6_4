@@ -7,103 +7,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="keyword" content="" />
-    <meta name="author" content="flexilecode" />
-    <!--! The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags !-->
-    <!--! BEGIN: Apps Title-->
+    <meta name="theme-color" content="#712cf9" />
+
     <title>
         CI: <?= CodeIgniter\CodeIgniter::CI_VERSION ?>
     </title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-
+    <!-- Dashboard Template · Bootstrap v5.3 -->
+    <script defer src="/assets/color-modes.js"></script>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/dashboard.css" rel="stylesheet" />
     <style>
-        :root {
-            --sidebar-width: 260px;
-            --sidebar-collapsed-width: 72px;
-            --topbar-height: 56px;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
         }
 
-        body {
-            min-height: 100vh;
-            background-color: var(--bs-body-bg);
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
         }
 
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 100;
-            width: var(--sidebar-width);
-            transition: width .35s ease;
-            overflow-y: auto;
-            overflow-x: hidden;
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: #0000001a;
+            border: solid rgba(0, 0, 0, 0.15);
+            border-width: 1px 0;
+            box-shadow:
+                inset 0 0.5em 1.5em #0000001a,
+                inset 0 0.125em 0.5em #00000026;
         }
 
-        .sidebar-collapsed {
-            width: var(--sidebar-collapsed-width) !important;
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
         }
 
-        .sidebar-collapsed .sidebar-text,
-        .sidebar-collapsed .sidebar-header {
-            display: none;
+        .bi {
+            vertical-align: -0.125em;
+            fill: currentColor;
         }
 
-        .main-content {
-            margin-left: var(--sidebar-width);
-            transition: margin-left .35s ease;
-            padding-top: var(--topbar-height);
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
         }
 
-        .sidebar-collapsed+.main-content {
-            margin-left: var(--sidebar-collapsed-width);
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .nav-link {
-            color: rgba(255, 255, 255, .75);
-            border-radius: 0.375rem;
-            margin: 0.25rem 0.75rem;
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: white;
-            background-color: rgba(255, 255, 255, .12);
+        .bd-mode-toggle {
+            z-index: 1500;
         }
 
-        .dropdown-menu {
-            border: none;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .25);
+        .bd-mode-toggle .bi {
+            width: 1em;
+            height: 1em;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
         }
     </style>
-
-    <?= $this->renderSection('css') ?>
-
-    <?= $this->renderSection('head_js') ?>
-
+    <?= $this->renderSection('head') ?>
 </head>
 
 <body>
-    <?= $this->include('components/nav') ?>
-    <?= $this->include('components/sidebar') ?>
-
+    <?= $this->include('components/toogler-theme') ?>
+    <?= $this->include('components/header') ?>
     <!-- Main Content -->
-    <main class="main-content">
-        <div class="container-fluid py-4">
-            <?= $this->renderSection('content') ?>
+    <div class="container-fluid">
+        <div class="row">
+            <?= $this->include('components/sidebar') ?>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2"><?= $base_title ?? '' ?></h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Share
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Export
+                            </button>
+                        </div>
+                        <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">
+                            <svg class="bi" aria-hidden="true">
+                                <use xlink:href="#calendar3"></use>
+                            </svg>
+                            This week
+                        </button>
+                    </div>
+                </div>
+                <h2>
+                    <?= $base_subtitle ?? '' ?>
+                </h2>
+                <?= $this->renderSection('content') ?>
+            </main>
         </div>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('sidebar-collapsed');
-            document.querySelector('.main-content').classList.toggle('sidebar-collapsed');
-        });
+    </div>
+    <script src="/assets/bootstrap.bundle.min.js" class="astro-vvvwv3sm">
     </script>
-
-    <?= $this->renderSection('footer_js') ?>
+    <?= $this->renderSection('footer') ?>
 </body>
 
 </html>

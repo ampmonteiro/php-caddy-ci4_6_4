@@ -17,9 +17,11 @@ $routes->group(
 
 // // $routes->get('/', [Pages::class,  'index']);
 
-$routes->get('/say', Say::class);
+$routes->get('/say', Say::class, ['as' => 'say_json']);
 
 $routes->view('/welcome', 'welcome/index', ['as' => 'original']);
+
+$routes->view('/table', 'pages/table', ['as' => 'table']);
 
 $routes->get(
     '/arrow',
