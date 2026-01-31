@@ -19,7 +19,10 @@ if (!function_exists('smart_view')) {
      */
     function smart_view(string $view, mixed ...$data): string
     {
-        $options = $data['options'] ?? [];
+        $options = array_key_exists('options', $data)
+            ? [...['saveData' => false], ...$data['options']]
+            :  ['saveData' => false];
+
         unset($data['options']);
 
         if (count($data) > 0 && !array_key_exists('slot', $data)) {
@@ -30,6 +33,7 @@ if (!function_exists('smart_view')) {
         $data['slot'] = view(
             $data['slot'],
             $data['slotData'] ?? [],
+            $options
         );
 
         unset($data['slotData']);

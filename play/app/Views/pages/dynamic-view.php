@@ -23,7 +23,7 @@ view_cell(
 smart_view(
     'cells/base-card',
     slot: 'components/card-info',
-    title: $title,
+    title: 'Card Primary',
     color: 'primary'
 )
 ?>
@@ -37,8 +37,8 @@ smart_view(
         'my_text' => 'This is some dynamic text for the first paragraph.',
         'text_2'  => 'Here is additional dynamic text for the second paragraph.'
     ],
-    title: $title,
-    color: 'success'
+    title: 'Smart View Card Success',
+    color: 'success',
 )
 ?>
 
@@ -48,7 +48,7 @@ smart_view(
     'cells/base-card',
     text: 'just simple text danger card',
     title: 'Card Danger',
-    color: 'danger'
+    color: 'danger',
 )
 ?>
 
@@ -56,8 +56,8 @@ smart_view(
 smart_view(
     'cells/base-card',
     text: 'hi muted card',
-    title: 'Card Muted',
-    color: 'muted'
+    title: 'Card MutedS',
+    color: 'muted',
 )
 ?>
 
