@@ -29,8 +29,19 @@ in _config exists:
 
 - defined some cli command in `composer.json` to generate ci `controllers`, `models` and `filters`
 
+## New 31/01/2026
 
-## New 24/01/2026
+- added a custom helper called `smart_view` to render views with dynamic slots
+
+- add a example view to show how to use dynamic slots in views
+
+- add a example in view without data on slot
+
+- add a example in view with data on slot and slotData
+
+![smart_view](image-2.png)
+
+## 24/01/2026
 
 -  change Routes > `index` >> Routes > `web`
 
