@@ -16,6 +16,8 @@ class Images extends BaseConfig
     /**
      * The path to the image library.
      * Required for ImageMagick, GraphicsMagick, or NetPBM.
+     *
+     * @deprecated 4.7.0 No longer used. Will be removed in a future release.
      */
     public string $libraryPath = '/usr/local/bin/convert';
 
