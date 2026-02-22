@@ -27,3 +27,9 @@ $routes->get(
     '/arrow',
     static fn() => 'Welcome Custom Routes'
 );
+
+
+$routes->group(
+    'form-example',
+    fn() => App\Controllers\FormExample::setRoutes(routes: $routes)
+);

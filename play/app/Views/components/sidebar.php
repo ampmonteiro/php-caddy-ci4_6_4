@@ -34,12 +34,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2
-                    <?= uri_string() === 'card' ? 'active' : '' ?>"
-                        href="<?= route_to('page_card') ?>">
+                    <?= uri_string() === 'form-example' ? 'active' : '' ?>"
+                        href="<?= route_to('form_index') ?>">
                         <svg class="bi" aria-hidden="true">
                             <use xlink:href="#file-earmark"></use>
                         </svg>
-                        Card Dynamic Cell
+                        Form Example
                     </a>
                 </li>
                 <li class="nav-item">
