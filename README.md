@@ -1,6 +1,8 @@
 # php-caddy-ci4_6_4
 
 
+
+
 ## env setup
 
 in _config exists:
@@ -28,6 +30,15 @@ in _config exists:
 - changed / custom  local of routes config to: `app > Routes > index.php`
 
 - defined some cli command in `composer.json` to generate ci `controllers`, `models` and `filters`
+
+
+## 8 Feb
+
+-  Testing the migration for 4.7.0
+
+- show files that need to change in config folder
+
+- show the process info in md files
 
 ## New 31/01/2026
 
